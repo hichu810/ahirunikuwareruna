@@ -14,11 +14,11 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.chestClosed, function (sp
     game.over(true)
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.collectibleRedCrystal, function (sprite, location) {
-    tiles.placeOnRandomTile(mySprite2, sprites.dungeon.collectibleInsignia)
-    tiles.placeOnRandomTile(mySprite, sprites.swamp.swampTile9)
     tiles.setTilemap(tilemap`レベル3`)
     info.stopCountdown()
     info.startCountdown(45)
+    tiles.placeOnRandomTile(mySprite, sprites.swamp.swampTile9)
+    tiles.placeOnRandomTile(mySprite2, sprites.dungeon.collectibleInsignia)
 })
 let mySprite2: Sprite = null
 let mySprite: Sprite = null
