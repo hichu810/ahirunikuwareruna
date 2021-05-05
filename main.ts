@@ -22,6 +22,7 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.collectibleRedCrystal, fu
 })
 let mySprite2: Sprite = null
 let mySprite: Sprite = null
+game.splash("アヒルに食われるな逃げろ")
 mySprite = sprites.create(img`
     . . . . f f f f . . . . 
     . . f f e e e e f f . . 
