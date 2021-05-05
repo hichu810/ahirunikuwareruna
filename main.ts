@@ -1,5 +1,6 @@
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairWest, function (sprite, location) {
     tiles.setTilemap(tilemap`レベル1`)
+    game.splash("何なのあれ、まじで、とりま逃げよう")
     info.stopCountdown()
     info.startCountdown(10)
     tiles.placeOnRandomTile(mySprite, sprites.castle.tileGrass3)
@@ -10,7 +11,7 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.collectibleBlueCrystal, f
     info.stopCountdown()
     info.startCountdown(120)
 })
-scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.chestClosed, function (sprite, location) {
+scene.onOverlapTile(SpriteKind.Player, assets.tile`transparency16`, function (sprite, location) {
     game.over(true)
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.collectibleRedCrystal, function (sprite, location) {
@@ -41,6 +42,7 @@ mySprite = sprites.create(img`
     . . . f f f f f f . . . 
     . . . f f . . f f . . . 
     `, SpriteKind.Player)
+mySprite.say("えなに、は。", 950)
 mySprite2 = sprites.create(img`
     . . . . . . . . . b 5 b . . . . 
     . . . . . . . . . b 5 b . . . . 
@@ -68,6 +70,8 @@ info.startCountdown(5)
 forever(function () {
     mySprite2.follow(mySprite)
     if (mySprite.overlapsWith(mySprite2)) {
+        game.splash("ギャーーーー")
+        game.splash("アヒルに食われた")
         game.over(false)
     }
 })
